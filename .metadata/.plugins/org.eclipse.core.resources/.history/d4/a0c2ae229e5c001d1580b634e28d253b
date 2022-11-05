@@ -1,0 +1,5 @@
+package entity2;
+
+public class Order {
+
+}

@@ -1,0 +1,13 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import db.Connection;
+
+public class ProductDAO {
+	private SessionFactory factory ;
+	public ProductDAO() {
+		factory = Connection.getInstance().getSessionFactory();
+	}
+}

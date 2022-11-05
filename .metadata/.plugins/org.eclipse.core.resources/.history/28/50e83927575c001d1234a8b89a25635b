@@ -1,0 +1,10 @@
+package dao;
+
+import org.hibernate.SessionFactory;
+
+public class OrderDAO {
+	SessionFactory factory;
+	public OrderDAO() {
+		factory = 
+	}
+}

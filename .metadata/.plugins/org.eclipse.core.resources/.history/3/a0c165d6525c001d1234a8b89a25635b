@@ -1,0 +1,12 @@
+package entity;
+
+import java.io.Serializable;
+
+public class OrderDetailID implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3566730697896503458L;
+	
+}

@@ -1,0 +1,35 @@
+package dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import db.Connection;
+import entity.OrderDetail;
+
+public class OrderDetailDAO {
+	
+	private SessionFactory  factory;
+	
+	public OrderDetailDAO() {
+		factory = Connection.getInstance().getSessionFactory();
+	}
+	
+	public boolean addOrderDetail(OrderDetail detail) {
+		Session session = factory.getCurrentSession();
+		Transaction transaction = session.getTransaction();
+		try {
+			transaction.begin();
+			session.saveOrUpdate(detail);
+			transaction.commit();
+		}catch (Exception e) {
+			transaction.rollback();
+			e.printStackTrace();
+			// TODO: handle exception
+		}
+		return false;
+	}
+	
+	
+	
+}

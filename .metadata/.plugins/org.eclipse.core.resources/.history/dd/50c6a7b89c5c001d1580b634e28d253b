@@ -1,0 +1,15 @@
+package dao;
+
+import org.hibernate.SessionFactory;
+
+import db.Connection;
+
+public class OrderDetailDAO {
+	
+	private SessionFactory  factory;
+	
+	public OrderDetailDAO() {
+		factory = Connection.getInstance().getSessionFactory();
+	}
+	
+}

@@ -1,0 +1,25 @@
+package app;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import entity.Order;
+import entity.OrderDetail;
+import entity.Product;
+
+public class Main {
+	public static void main(String[] args) {
+		StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
+		Metadata metadata = new MetadataSources(registry)
+				.addAnnotatedClass(Order.class)
+				.addAnnotatedClass(Product.class)
+				.addAnnotatedClass(OrderDetail.class)
+				.getMetadataBuilder()
+				.build();
+		SessionFactory factory = metadata.getSessionFactoryBuilder().build();
+		
+	}
+}

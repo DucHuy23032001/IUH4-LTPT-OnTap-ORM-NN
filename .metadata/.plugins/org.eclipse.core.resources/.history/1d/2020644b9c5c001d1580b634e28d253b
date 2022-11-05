@@ -1,0 +1,49 @@
+package app;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import dao.OrderDAO;
+import dao.ProductDAO;
+import db.Connection;
+import entity.Order;
+import entity.OrderDetail;
+import entity.Product;
+import jakarta.transaction.Transaction;
+
+public class Main {
+	public static void main(String[] args) {
+		
+//		StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
+//		Metadata metadata = new MetadataSources(registry)
+//				.addAnnotatedClass(Order.class)
+//				.addAnnotatedClass(Product.class)
+//				.addAnnotatedClass(OrderDetail.class)
+//				.getMetadataBuilder()
+//				.build();
+//		SessionFactory factory = metadata.getSessionFactoryBuilder().build();
+//		Session session = factory.getCurrentSession();
+		
+//		OrderDAO dao = new OrderDAO();
+//		Order order = new Order(new Date());
+//		dao.addOrder(order);
+//		Order order = dao.findOrder(1);
+//		System.out.println(order.toString());
+		
+		ProductDAO daProductDAO = new ProductDAO();
+		Product product = new Product("Coca", 10000);
+		daProductDAO.addProduct(product);
+		
+		
+//		SessionFactory factory = Connection.getInstance().getSessionFactory();
+//		Session session = factory.getCurrentSession();
+//		Transaction transaction = session.getTransaction();
+		
+	}
+}
